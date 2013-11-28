@@ -16,6 +16,7 @@ CREATE TABLE arduino_data (
 	client_id 	INT NOT NULL,
 	daylight 	INT,
 	moisture 	INT,
+	measuredate TIMESTAMP DEFAULT NOW(),
 	PRIMARY KEY (id)
 );
 CREATE TABLE arduino_client (

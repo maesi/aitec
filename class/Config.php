@@ -17,8 +17,13 @@ class Config {
 	public static $ARDUINO_CLIENT_ID_KEY		= "client";
 	public static $ARDUINO_DATA_DAYLIGHT_KEY 	= "daylight";
 	public static $ARDUINO_DATA_MOISTURE_KEY 	= "moisture";
-	
 
 	public static $ARDUINO_WRITE_DATA_OK		= 1;
 	public static $ARDUINO_WRITE_DATA_ERROR		= -1;
+	
+	// Ajax Config
+	public static $AJAX_CLIENT_ID_KEY			= "client";
+	
+	public static $DATA_SEPARATOR				= "|";
+	public static $LINE_SEPARATOR				= "#";
 }
