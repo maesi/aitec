@@ -1,6 +1,4 @@
-CREATE DATABASE arduino_db;
-USE arduino_db;
-
+DROP TABLE IF EXISTS arduino_config; 
 CREATE TABLE arduino_config (
 	id 						INT 		NOT NULL AUTO_INCREMENT ,
 	daylight_threshold 	INT 		NOT NULL,
@@ -11,6 +9,7 @@ CREATE TABLE arduino_config (
 
 INSERT INTO arduino_config(daylight_threshold, moisture_threshold,beer_cost) Values (300,50,3.80);
 
+DROP TABLE IF EXISTS arduino_data; 
 CREATE TABLE arduino_data (
 	id 			INT NOT NULL AUTO_INCREMENT,
 	client_id 	INT NOT NULL,
@@ -19,12 +18,15 @@ CREATE TABLE arduino_data (
 	measuredate TIMESTAMP DEFAULT NOW(),
 	PRIMARY KEY (id)
 );
+
+DROP TABLE IF EXISTS arduino_client; 
 CREATE TABLE arduino_client (
 	id 	INT 			NOT NULL AUTO_INCREMENT,
 	name 	VARCHAR(64) NOT NULL,
 	PRIMARY KEY (id)
 );
 
+DROP TABLE IF EXISTS arduino_bills; 
 CREATE TABLE arduino_bills (
 	id 				INT 		NOT NULL AUTO_INCREMENT,
 	client_id 		INT 		NOT NULL,
