@@ -7,12 +7,10 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($daylight, $moisture, $measuredate);
 $first = true;
+$return = array();
 while($stmt->fetch()) {
-	if($first) {
-		$first = false;
-	} else {
-		echo Config::$LINE_SEPARATOR;
-	}
-	echo $daylight . Config::$DATA_SEPARATOR . $moisture . Config::$DATA_SEPARATOR . $measuredate;
+	$arr = array($daylight, $moisture, $measuredate);
+	array_push($return, $arr);
 }
+echo json_encode($return);
 ?>
