@@ -7,10 +7,11 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($daylight, $moisture, $measuredate);
 $first = true;
-$return = array();
+$daylight_arr = array();
+$moisture_arr = array();
 while($stmt->fetch()) {
-	$arr = array($daylight, $moisture, $measuredate);
-	array_push($return, $arr);
+	array_push($daylight_arr, $daylight);
+	array_push($moisture_arr, $moisture);
 }
-echo json_encode($return);
+echo json_encode(array($daylight_arr, $moisture_arr));
 ?>
