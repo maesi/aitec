@@ -1,0 +1,112 @@
+﻿/*################################################################*/
+/* CSS by Florian Bucher */
+/* Design Default */
+/*################################################################*/
+
+
+/*********************************************/
+/* Overall Element Properties */
+body {
+	background-color: #CC9900;
+}
+
+h1, h2, h3, h4 {
+	text-transform: uppercase;	
+}
+
+a:visited {
+	color:	#333333 !important;
+}
+
+
+/*********************************************/
+/* Wrapper */
+
+body > #wrapper {
+	background-color: #FFCC66;
+}
+
+/*********************************************/
+/* header seciton */
+#wrapper > header {	
+	border: 	0.1em solid black;	
+}
+
+header > h1 {	
+	font-size: 		2.5em;	
+	letter-spacing: 0.5em;
+	text-shadow: 	0 0 0.3em #222222;
+
+}
+
+header > #cssSelection {
+	background-color: #FFFF99;
+}	
+
+#cssSelection > ul {
+}
+
+#cssSelection > ul > li {
+	border-left: 	0.1em solid black;
+}
+
+#cssSelection > ul >li:first-child {
+	border-left: 	0;
+}
+#cssSelection .selectedDesign {
+	list-style-image:		url(../img/arrow.gif);
+	list-style-position:	inside;
+}
+
+
+/*********************************************/
+/* Navigation */
+#wrapper > nav {
+	border: 	0.1em solid black;
+}
+
+nav > ul {
+	margin: 	0 0.35em 0.8em;
+	
+}
+
+nav > ul > li { }
+
+nav ul > li:nth-child(odd) {	
+	background-color: 	#FFCC00;
+}
+nav ul > li > a {
+	display:				list-item;
+	list-style-image: 		url(../img/arrow.gif);
+	list-style-position:  	inside;
+	text-decoration: 		none;
+	color: 					black !important;
+}
+
+nav ul > li:hover {
+	background-color:	#CC3300 !important;
+	cursor: 			pointer;
+}
+
+nav ul > li:hover > a {
+	color:	white !important;
+}
+
+
+
+/*********************************************/
+/* Content */
+
+#wrapper > section {
+	border: 0.1em solid black;
+
+}
+
+
+/*********************************************/
+/* Footer */
+
+#wrapper > footer {
+	border: 	0.1em solid black;
+	
+}

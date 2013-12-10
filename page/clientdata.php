@@ -1,36 +1,21 @@
-<div id="data"></div>
+<section id="data"></section>
 <script type="text/javascript">
   	<!--
-  	$(function() {
+  	$().ready(function() {
   	    readdata();
-  	});
-  	
-  	var readdata = function () {
+  	    
+  	    //setInterval(readdata, 1000);
+  	});  	
+
+  	function readdata () {
   		$.ajax({
   	  		url: "ajax/readdata.php?<?php echo Config::$AJAX_CLIENT_ID_KEY; ?>=1"
   	  	}).done(function( data ) {
-  	  		$("#data").html(processData(data));
+  	  	  	var parsed = jQuery.parseJSON(data);
+  	  	  	var testdata = parsed;
+  	  		$("#data").html("Testdata: " + testdata);
   	  	});
   	};
-  	setInterval(readdata, 1000);
 
-	function processData(data) {
-		var res = '';
-		if(data.length > 0) {
-			var lines = data.split("<?php echo Config::$LINE_SEPARATOR; ?>");
-			lines.forEach(function(entry) {
-			    var vals = entry.split("<?php echo Config::$DATA_SEPARATOR;?>");
-			    res += vals[0];
-			    res += " - ";
-			    res += vals[1];
-			    res += " - ";
-			    res += vals[2];
-			    res += "<br />";
-			})
-		} else {
-			res = 'no data';
-		}
-		return res;
-	}
 	//-->
-	</script>
+</script>

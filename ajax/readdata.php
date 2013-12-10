@@ -9,9 +9,11 @@ $stmt->bind_result($daylight, $moisture, $measuredate);
 $first = true;
 $daylight_arr = array();
 $moisture_arr = array();
+$counter = 1;
 while($stmt->fetch()) {
-	array_push($daylight_arr, $daylight);
-	array_push($moisture_arr, $moisture);
+	array_push($daylight_arr, array($counter ,$daylight));
+	array_push($moisture_arr, array($counter ,$moisture));
+	$counter ++;
 }
 echo json_encode(array($daylight_arr, $moisture_arr));
 ?>
