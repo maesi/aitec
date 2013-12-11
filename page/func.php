@@ -6,16 +6,8 @@ if(isset($_GET[$new_action])) {
 $new_action_url	= PageHandler::getCurrentPageUrl()."&".$new_action;
 ?>
 <form action='<?php echo $new_action_url; ?>' method='post'>
-	<table>
-		<!-- <tr>
-			<td><label for="client">Client-ID</label></td>
-			<td><input name="client" type='number' value='1' /></td>
-		</tr>-->
-		<tr>
-			<td><input name="client" type='hidden' value='1' /></td>
-			<td><input type="submit" value='Neues Bier bestellen' /></td>
-		</tr>
-	</table>
+<input name="client" type='hidden' value='1' />
+<input type="submit" value='Neues Bier bestellen' />
 </form>
 
 <?php 
