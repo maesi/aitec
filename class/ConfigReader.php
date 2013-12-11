@@ -14,6 +14,13 @@ class ConfigReader {
 		}
 		return null;
 	}
+	
+	public static function getAll($db) {
+		$ret = "moisture_threshold".self::getConfig(Config::$ARDUINO_CONFIG_MOISTURE_EMPTY, $db)."-";
+		$ret .= "daylight_threshold".self::getConfig(Config::$ARDUINO_CONFIG_DAYLIGHT, $db)."-";
+		$ret .= "beer_cost".self::getConfig(Config::$ARDUINO_CONFIG_COST, $db)."-";
+		return $ret;
+	}
 
 	private static function getField($key) {
 		$field = null;
