@@ -13,7 +13,7 @@
   	  	}).done(function( data ) {
   	  	  	var parsed = jQuery.parseJSON(data);
   	  	  	var testdata = parsed;
-  	  		$("#data").html("Testdata: " + testdata);
+  	  	//$("#data").html("Testdata: " + testdata);
   	  	});
   	};
 
